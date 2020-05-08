@@ -28,7 +28,7 @@ RUN docker-php-ext-enable opcache
 #RUN echo "max_execution_time = 300" >> /usr/local/etc/php/php.ini
 WORKDIR /var/www/html
 
-COPY vh.conf /etc/apache2/sites-available/000-default.conf
+#COPY vh.conf /etc/apache2/sites-available/000-default.conf
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 EXPOSE 80
