@@ -26,9 +26,11 @@ RUN docker-php-ext-enable opcache
 #RUN chmod -R 777 /var/www/html/appserver/protected/runtime
 #RUN chmod -R 777 /var/www/html/appserver/protected/data
 #RUN echo "max_execution_time = 300" >> /usr/local/etc/php/php.ini
-#WORKDIR /var/www/html
+WORKDIR /var/www/html
 
-COPY . .
+COPY . /var/www/html
+
+COPY vh.conf /etc/apache2/sites-available/000-default.conf
 
 #COPY vh.conf /etc/apache2/sites-available/000-default.conf
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
